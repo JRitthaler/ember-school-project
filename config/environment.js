@@ -3,8 +3,18 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-school-project-1',
-    environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    //  firebase: 'https://menu-tracker-67cce.firebaseio.com/',
+      firebase: {
+        apiKey: "AIzaSyBbIi_RNe-mdKzAVt0-XAA-76imp2hXjZk",
+authDomain: "menu-tracker-67cce.firebaseapp.com",
+databaseURL: "https://menu-tracker-67cce.firebaseio.com",
+projectId: "menu-tracker-67cce",
+storageBucket: "menu-tracker-67cce.appspot.com",
+messagingSenderId: "244173188644"
+      },
     rootURL: '/',
+  //  baseURL:'/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
