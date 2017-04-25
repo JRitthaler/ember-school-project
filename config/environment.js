@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-school-project-1',
+<<<<<<< HEAD
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
     //  firebase: 'https://menu-tracker-67cce.firebaseio.com/',
       firebase: {
@@ -15,6 +16,10 @@ messagingSenderId: "244173188644"
       },
     rootURL: '/',
   //  baseURL:'/',
+=======
+    environment: environment,
+    rootURL: '/',
+>>>>>>> f27d2596452bd52deb4682acc2d22bb5f81629bb
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
