@@ -6,7 +6,15 @@
 //});
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
+import { belongsTo, hasMany } from 'ember-data/relationships';
+
 export default Model.extend({
   name: attr('string'),
-  isAvailable: attr('boolean')
+  isAvailable: attr('boolean'),
+  description: attr('string'),
+  imageUrl: attr('string'),
+  course: attr('string'),
+  restaurant: belongsTo(),
+  health: attr('number'),
+
 });

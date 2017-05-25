@@ -1,0 +1,33 @@
+{{heading 'Show Route' 2}}
+<h1>Show Route</h1>
+<p>Name: {{model.name}}</p>
+{{#if model.user}}
+  <p>Owned by: {{model.user.displayName}}
+    {{#if (eq model.user.id session.currentUser.id)}}
+      <button {{action 'sellRestaurant' model}}>Sell</button>
+    {{/if}}
+  </p>
+{{else}}
+  <p>This restaurant is unclaimed; <button  {{action 'buyRestaurant' model}}> Buy it</button></p>
+{{/if}}
+
+<p>The following foods are served here:</p>
+<ul>
+  {{#each model.foods as |food|}}
+    <li>{{food.name}}</li>
+  {{/each}}
+</ul>
+<p>Rounded 4.12: {{round 4.12 1}}</p>
+{{#if model.foods}}
+  {{#if (eq model.foods.length 1)}}
+    <p>Health here: {{model.maxHealth}}/10</p>
+    {{rating-bar model.averageHealth 200 color='green'}}
+  {{else}}
+    <p>Max health here: {{model.maxHealth}}/10</p>
+    <p>Average health here: {{round model.averageHealth 2}}/10</p>
+    {{rating-bar (round model.averageHealth) 200 color='green'}}
+  {{/if}}
+{{else}}
+  <p>Please add food to this restaurant.</p>
+{{/if}}
+{{#link-to 'restaurants.restaurant.edit' model.id}}<button>Edit</button>{{/link-to}}

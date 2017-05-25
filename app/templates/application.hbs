@@ -1,26 +1,20 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<<<<<<< HEAD
-<h1>Menu Tracker</h1>
-<p>Our restaurant is {{restaurant.name}}.  We've been open for {{restaurant.yearsOpen}} year(s).</p>
-<p id="explanation">Menu Tracker helps you see what dishes are available today.</p>
-<ul>
-  {{#each model as |food|}}
-  {{#if food.isAvailable}}
-   <li>
-     {{food.name}}!
-     <button {{action 'makeUnavailable' food}}>Make Unavailable</button>
-   </li>
- {{else}}
-   <li class="not-available">
-     {{food.name}}
-     <button {{action 'makeAvailable' food}}>Make Available</button>
-   </li>
- {{/if}}
+{{link-to 'About Us' 'about'}};
+{{link-to 'Foods' 'foods'}};
+{{link-to 'Contact Us' 'contact'}}
+{{link-to 'Restaurants' 'restaurants'}}
+<span class="pull-right">
+  {{#if session.currentUser}}
+    {{#link-to 'me'}}{{session.currentUser.displayName}}{{/link-to}}
+    <a href="#" {{action 'logout'}}>Logout</a>
+  {{else}}
+    {{link-to 'Login' 'login'}}
+    {{link-to 'Register' 'register'}}
+  {{/if}}
+</span>
+<hr>
+<div class="flash-messages">
+  {{#each flashMessages.queue as |flash|}}
+    {{flash-message flash=flash}}
   {{/each}}
-</ul>
-=======
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
->>>>>>> f27d2596452bd52deb4682acc2d22bb5f81629bb
-
+</div>
 {{outlet}}

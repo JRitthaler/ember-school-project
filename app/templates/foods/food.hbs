@@ -1,0 +1,10 @@
+<h1>{{model.name}}</h1>
+<p>{{model.description}}</p>
+<p>This is served at {{model.restaurant.name}} as a {{model.course}}.</p>
+<p>Health: {{model.health}}/10</p>
+{{icon-image src=model.imageUrl}}
+<br>
+{{#if (can-edit-food model)}}
+  {{link-to 'Edit this food' 'foods.food.edit' model.id}}
+    <button {{action 'destroyItem' model}}>Delete Item</button>
+{{/if}}

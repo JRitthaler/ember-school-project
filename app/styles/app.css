@@ -2,3 +2,53 @@
 #explanation {
   text-decoration: underline;
 }
+.flex-container {
+  display:flex;
+  flex-direction: row;
+}
+.flex-item {
+padding: 10px;  flex-direction: row;
+}
+.medium-text-area {
+  height 50px;
+  width: 300px;
+}
+.pull-right {
+  float:right;
+}
+.pull-left {
+  float: left;
+}
+.email-status {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin 5px;
+}
+.rating-bar {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 15px;
+}
+.inner-bar {
+  height: 100%;
+  /*background-color: blue;*/
+  display: block;
+}
+.field {
+  padding-bottom: 8px;
+}
+.field input {
+  width 200px;
+}
+.field label {
+  color: #000;
+  display: block;
+}
+.alert-danger {
+  color: red;
+}
+.alert-success {
+  color: green;
+}
